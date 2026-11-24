@@ -262,6 +262,87 @@
     html{scroll-behavior:auto}
   }
   .is-ended .hide-when-ended{display:none!important}
+
+  /* ---------- Parcours complet (3 étapes) ---------- */
+  .hero-link{display:inline-flex;align-items:center;gap:8px;margin-top:20px;min-height:44px;color:#fff;font-weight:700;text-decoration:none;border-bottom:2px solid rgba(255,176,32,.6);padding-bottom:2px}
+  .hero-link:hover{color:var(--amber)}
+  .roadmap{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:760px;margin:0 auto 30px;position:relative}
+  .roadmap::before{content:"";position:absolute;top:23px;left:16%;right:16%;height:3px;background:linear-gradient(90deg,#ffb020,#2f6bff,#3be27a);border-radius:3px;opacity:.6}
+  .roadmap li{position:relative;text-align:center}
+  .roadmap a{display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:.82rem;line-height:1.25;color:#dfe6fb;min-height:44px}
+  .roadmap .dot{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-family:Sora,sans-serif;font-weight:800;font-size:1.15rem;color:#fff;border:3px solid var(--night)}
+  .rm1 .dot{background:var(--grad);box-shadow:0 0 0 4px rgba(255,122,26,.3)}
+  .rm2 .dot{background:var(--grad-blue)}
+  .rm3 .dot{background:linear-gradient(135deg,#3be27a,#0f9d4f)}
+  .stages{display:grid;gap:20px}
+  .stage{position:relative;border-radius:26px;background:linear-gradient(160deg,var(--card),var(--night-2));border:1px solid var(--line-2);overflow:hidden;scroll-margin-top:16px}
+  .stage::before{content:"";position:absolute;left:0;top:0;right:0;height:4px}
+  .st1::before{background:var(--grad)} .st2::before{background:var(--grad-blue)} .st3::before{background:linear-gradient(90deg,#3be27a,#0f9d4f)}
+  .stage-head{display:flex;gap:14px;align-items:flex-start;padding:24px 18px 0}
+  .stage-num{flex-shrink:0;width:54px;height:54px;border-radius:16px;display:grid;place-items:center;color:#fff}
+  .stage-num svg{width:28px;height:28px}
+  .st1 .stage-num{background:var(--grad)} .st2 .stage-num{background:var(--grad-blue)} .st3 .stage-num{background:linear-gradient(135deg,#3be27a,#0f9d4f)}
+  .stage-step{font-size:.75rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted)}
+  .stage-head h3{font-size:clamp(1.2rem,5vw,1.55rem);font-weight:800;line-height:1.2}
+  .stage-body{padding:18px}
+  .stage-intro{color:var(--muted);font-size:.95rem;margin-bottom:16px}
+  .fee{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:18px;padding:16px 18px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid var(--line-2)}
+  .fee-label{font-size:.85rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+  .fee-amount{font-family:Sora,sans-serif;font-weight:800;font-size:1.6rem;line-height:1.1;white-space:nowrap}
+  .st1 .fee-amount{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .st2 .fee-amount{color:#8fbaff} .st3 .fee-amount{color:#6ff0a0}
+  .fee-old{display:block;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--red);font-weight:600;font-size:.9rem}
+  .fee > span:last-child{text-align:right;margin-left:auto}
+  .mini-list{list-style:none;display:grid;gap:10px}
+  .mini-list li{display:flex;gap:12px;align-items:flex-start;font-size:.95rem;line-height:1.45}
+  .mini-list li i{flex-shrink:0;width:24px;height:24px;border-radius:8px;display:grid;place-items:center;margin-top:1px;color:#fff}
+  .mini-list li i svg{width:14px;height:14px}
+  .st1 .mini-list li i{background:var(--grad)} .st2 .mini-list li i{background:var(--grad-blue)} .st3 .mini-list li i{background:linear-gradient(135deg,#3be27a,#0f9d4f)}
+  .mini-list .hl{font-weight:700;color:#fff}
+  .mini-list .sub{display:block;color:var(--muted);font-size:.85rem}
+  .tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:5px;border-radius:14px;background:rgba(0,0,0,.3);border:1px solid var(--line);margin-bottom:18px}
+  .tab{min-height:46px;border:0;border-radius:10px;background:transparent;color:var(--muted);font:700 .95rem Sora,Inter,sans-serif;cursor:pointer;transition:background .2s,color .2s}
+  .tab[aria-selected="true"]{background:var(--grad-blue);color:#fff;box-shadow:0 6px 16px -6px rgba(47,107,255,.7)}
+  .tab:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+  .lang-box{margin-top:18px;border-radius:18px;padding:18px 16px;background:linear-gradient(135deg,rgba(255,176,32,.14),rgba(255,61,46,.1));border:1px solid rgba(255,176,32,.45)}
+  .lang-box h4{display:flex;align-items:center;gap:10px;font-family:Sora,sans-serif;font-size:1.05rem;font-weight:800;color:#ffd08a;margin-bottom:12px}
+  .lang-box h4 svg{width:24px;height:24px;color:var(--amber)}
+  .lang-box p{font-size:.93rem;margin-bottom:12px}
+  .lang-box p strong{color:#fff}
+  .tests{display:flex;flex-wrap:wrap;gap:8px}
+  .test{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;font-weight:700;font-size:.85rem}
+  .test.ok{background:rgba(59,226,122,.14);border:1px solid rgba(59,226,122,.45);color:#9ff5c0}
+  .test.no{background:rgba(255,61,46,.14);border:1px solid rgba(255,61,46,.55);color:#ffb4a8;text-decoration:line-through}
+  .test svg{width:14px;height:14px}
+  .after-visa{margin-top:14px;display:flex;gap:12px;align-items:flex-start;padding:16px 18px;border-radius:16px;background:linear-gradient(135deg,rgba(47,107,255,.18),rgba(59,226,122,.1));border:1px solid rgba(90,162,255,.4);font-size:.95rem}
+  .after-visa svg{width:28px;height:28px;color:var(--sky);margin-top:2px}
+  .after-visa strong{color:#fff}
+  .after-visa .amt{font-family:Sora,sans-serif;font-weight:800;font-size:1.25rem;color:#fff;white-space:nowrap}
+  .stage-cta{margin-top:16px}
+  .refund{margin-top:26px;display:flex;gap:12px;align-items:center;padding:16px 18px;border-radius:16px;background:rgba(255,61,46,.1);border:1px solid rgba(255,61,46,.5);font-weight:700;font-size:.95rem}
+  .refund svg{width:28px;height:28px;color:var(--red)}
+  .fees-recap{margin-top:26px;border-radius:22px;overflow:hidden;border:1px solid var(--line-2)}
+  .fees-recap h3{font-size:1.1rem;font-weight:800;padding:16px 18px;background:rgba(255,255,255,.05);border-bottom:1px solid var(--line)}
+  .fees-recap dl{display:grid}
+  .fees-recap .row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line)}
+  .fees-recap .row:last-child{border-bottom:0}
+  .fees-recap dt{font-size:.93rem;color:#dfe6fb}
+  .fees-recap dt small{display:block;color:var(--muted);font-size:.8rem}
+  .fees-recap dd{font-family:Sora,sans-serif;font-weight:800;white-space:nowrap;text-align:right}
+  .fees-recap dd s{display:block;font-family:Inter,sans-serif;font-weight:600;font-size:.78rem;color:var(--muted);text-decoration-color:var(--red)}
+  .fees-recap .promo dd{color:var(--amber)}
+  .parcours-cta{margin-top:26px;text-align:center}
+  @media (min-width:768px){
+    .roadmap a{font-size:.92rem}
+    .stage-head{padding:30px 30px 0}
+    .stage-body{padding:22px 30px 30px}
+    .st3 .mini-list{grid-template-columns:1fr 1fr;column-gap:24px}
+    .parcours-cta .btn{min-width:420px}
+  }
+  @media (min-width:1024px){
+    .st2 .stage-body{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:start}
+    .st2 .lang-box{margin-top:0}
+  }
 </style>
 </head>
 <body>
@@ -276,6 +357,11 @@
     <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 5.5h18v13H3zM3 6l9 7 9-7"/></symbol>
     <symbol id="i-plane" viewBox="0 0 24 24"><path fill="currentColor" d="M21.5 15.5v-2L13.5 8.5V3a1.5 1.5 0 0 0-3 0v5.5l-8 5v2l8-2.5V18l-2 1.5V21l3.5-1 3.5 1v-1.5l-2-1.5v-5l8 2.5z"/></symbol>
     <symbol id="i-users" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM1.5 21c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5M16 3.3a4 4 0 0 1 0 7.4M18.5 14.8c2.4.8 4 2.9 4 6.2"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14 3H6v18h12V7zM14 3v4h4M9 13l2 2 4-4"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M2 9l10-5 10 5-10 5zM6 11v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5M22 9v6"/></symbol>
+    <symbol id="i-passport" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 3h14v18H5zM12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM9 17h6"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-lang" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 5h10M8 3v2M5 5c0 4 3 7 7 8M11 5c0 4-3 7-7 9M13 21l4-9 4 9M14.5 18h5"/></symbol>
   </defs>
 </svg>
 
@@ -306,6 +392,7 @@
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>Taxe gérée par l'agence</li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>Suivi personnalisé sur WhatsApp</li>
         </ul>
+        <a class="hero-link" href="#parcours">Équivalence, admission, visa : voir le parcours complet →</a>
       </div>
 
       <div class="price-card reveal">
@@ -385,6 +472,152 @@
         <li class="step reveal" data-n="3"><span class="step-num" aria-hidden="true">3</span><h3>Nous préparons et déposons votre dossier</h3><p>La taxe est gérée par l'agence.</p></li>
         <li class="step reveal" data-n="4"><span class="step-num" aria-hidden="true">4</span><h3>Vous recevez votre équivalence</h3><p>Et vous pouvez lancer votre demande d'admission.</p></li>
       </ol>
+    </div>
+  </section>
+
+  <!-- ======================= PARCOURS COMPLET : équivalence → admission → visa ======================= -->
+  <section id="parcours" aria-labelledby="parcoursTitre">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Votre projet de A à Z</span>
+        <h2 class="section-title" id="parcoursTitre">Votre parcours vers le <span class="grad-text">Luxembourg</span> en 3 étapes</h2>
+        <p class="section-sub">De l'équivalence jusqu'au visa, Afrigate Travel vous accompagne à chaque étape. Voici exactement ce qu'il faut prévoir.</p>
+      </div>
+
+      <ol class="roadmap reveal" aria-label="Les 3 étapes">
+        <li class="rm1"><a href="#etape-1"><span class="dot">1</span>Équivalence</a></li>
+        <li class="rm2"><a href="#etape-2"><span class="dot">2</span>Admission</a></li>
+        <li class="rm3"><a href="#etape-3"><span class="dot">3</span>Visa</a></li>
+      </ol>
+
+      <div class="stages">
+        <!-- Étape 1 -->
+        <article class="stage st1 reveal" id="etape-1" aria-labelledby="st1Titre">
+          <div class="stage-head">
+            <div class="stage-num" aria-hidden="true"><svg><use href="#i-doc"/></svg></div>
+            <div><span class="stage-step">Étape 1</span><h3 id="st1Titre">Demande d'équivalence du diplôme</h3></div>
+          </div>
+          <div class="stage-body">
+            <p class="stage-intro">La première pièce du dossier : sans elle, aucune demande d'admission n'est possible.</p>
+            <ul class="mini-list">
+              <li><i aria-hidden="true"><svg><use href="#i-check"/></svg></i>Demande écrite indiquant le motif, CV et pièce d'identité valide</li>
+              <li><i aria-hidden="true"><svg><use href="#i-check"/></svg></i>Copie du bac et relevé de notes du bac</li>
+              <li><i aria-hidden="true"><svg><use href="#i-check"/></svg></i>Taxe gérée par l'agence</li>
+            </ul>
+            <div class="fee">
+              <span class="fee-label">Frais <span class="hide-when-ended">· offre spéciale</span></span>
+              <span><span class="fee-old hide-when-ended" data-cfg="priceOld"></span><span class="fee-amount" data-cfg="priceNew"></span></span>
+            </div>
+            <a class="btn btn-cta btn-block stage-cta js-wa" href="#"><svg aria-hidden="true"><use href="#i-wa"/></svg>Je profite de l'offre</a>
+          </div>
+        </article>
+
+        <!-- Étape 2 -->
+        <article class="stage st2 reveal" id="etape-2" aria-labelledby="st2Titre">
+          <div class="stage-head">
+            <div class="stage-num" aria-hidden="true"><svg><use href="#i-cap"/></svg></div>
+            <div><span class="stage-step">Étape 2</span><h3 id="st2Titre">Demande d'admission</h3></div>
+          </div>
+          <div class="stage-body">
+            <div>
+              <p class="stage-intro">Les documents dépendent du niveau visé. Choisissez votre programme :</p>
+              <div class="tabs" role="tablist" aria-label="Niveau d'études">
+                <button class="tab" role="tab" id="tab-bachelor" aria-controls="panel-bachelor" aria-selected="true">Bachelor (Licence)</button>
+                <button class="tab" role="tab" id="tab-master" aria-controls="panel-master" aria-selected="false" tabindex="-1">Master</button>
+              </div>
+              <div role="tabpanel" id="panel-bachelor" aria-labelledby="tab-bachelor">
+                <ul class="mini-list">
+                  <li><i aria-hidden="true"><svg><use href="#i-check"/></svg></i>Une photo d'identité</li>
+                  <li><i aria-hidden="true"><svg><use href="#i-check"/></svg></i>Une copie de la carte d'identité ou du passeport</li>
+                  <li><i aria-hidden="true"><svg><use href="#i-check"/></svg></i>Une copie du diplôme de fin d'études secondaires (le bac)</li>
+                  <li><i aria-hidden="true"><svg><use href="#i-check"/></svg></i><span><span class="hl">L'équivalence du bac</span> délivrée par le ministère luxembourgeois de l'Éducation<span class="sub">→ c'est l'étape 1</span></span></li>
+                  <li><i aria-hidden="true"><svg><use href="#i-check"/></svg></i>Les relevés de notes des trois dernières années du secondaire</li>
+                  <li><i aria-hidden="true"><svg><use href="#i-check"/></svg></i>Les résultats des semestres déjà suivis, si vous avez fait des études après le bac</li>
+                  <li><i aria-hidden="true"><svg><use href="#i-check"/></svg></i>Une traduction officielle si les documents ne sont pas en anglais, français ou allemand</li>
+                  <li><i aria-hidden="true"><svg><use href="#i-check"/></svg></i>Un certificat de langue de niveau B2 pour chaque langue d'enseignement du programme</li>
+                </ul>
+              </div>
+              <div role="tabpanel" id="panel-master" aria-labelledby="tab-master" hidden>
+                <ul class="mini-list">
+                  <li><i aria-hidden="true"><svg><use href="#i-check"/></svg></i>Une photo d'identité</li>
+                  <li><i aria-hidden="true"><svg><use href="#i-check"/></svg></i>Une copie de la carte d'identité ou du passeport</li>
+                  <li><i aria-hidden="true"><svg><use href="#i-check"/></svg></i>Une copie du diplôme de Bachelor (Licence)</li>
+                  <li><i aria-hidden="true"><svg><use href="#i-check"/></svg></i>Le relevé détaillé de toutes les notes de la Licence</li>
+                  <li><i aria-hidden="true"><svg><use href="#i-check"/></svg></i>Une traduction officielle si les documents ne sont pas en anglais, français ou allemand</li>
+                  <li><i aria-hidden="true"><svg><use href="#i-check"/></svg></i>Un certificat de langue pour chaque langue d'enseignement</li>
+                  <li><i aria-hidden="true"><svg><use href="#i-check"/></svg></i><span><span class="hl">La reconnaissance du diplôme</span> par le ministère de la Recherche (Registre des titres)</span></li>
+                </ul>
+              </div>
+              <div class="fee">
+                <span class="fee-label">Frais</span>
+                <span class="fee-amount" data-money="feeAdmission"></span>
+              </div>
+            </div>
+
+            <aside class="lang-box" aria-labelledby="langTitre">
+              <h4 id="langTitre"><svg aria-hidden="true"><use href="#i-lang"/></svg>Certificats de langue : point très important</h4>
+              <p><strong>Pas de rattrapage :</strong> les candidats hors UE doivent fournir leurs certificats <strong>avant la date limite du programme</strong>. Aucun document n'est accepté après.</p>
+              <p><strong>Tests acceptés</strong>, par exemple :</p>
+              <div class="tests" style="margin-bottom:14px">
+                <span class="test ok"><svg aria-hidden="true"><use href="#i-check"/></svg>DELF</span>
+                <span class="test ok"><svg aria-hidden="true"><use href="#i-check"/></svg>IELTS Academic</span>
+                <span class="test ok"><svg aria-hidden="true"><use href="#i-check"/></svg>TOEFL iBT</span>
+                <span class="test ok"><svg aria-hidden="true"><use href="#i-check"/></svg>TEF Études</span>
+              </div>
+              <p><strong>Test refusé :</strong></p>
+              <div class="tests"><span class="test no"><svg aria-hidden="true"><use href="#i-x"/></svg>Duolingo</span><span class="sr-only">Le Duolingo n'est pas accepté.</span></div>
+            </aside>
+          </div>
+        </article>
+
+        <!-- Étape 3 -->
+        <article class="stage st3 reveal" id="etape-3" aria-labelledby="st3Titre">
+          <div class="stage-head">
+            <div class="stage-num" aria-hidden="true"><svg><use href="#i-passport"/></svg></div>
+            <div><span class="stage-step">Étape 3</span><h3 id="st3Titre">Demande de visa</h3></div>
+          </div>
+          <div class="stage-body">
+            <p class="stage-intro">Documents obligatoires pour la demande de visa :</p>
+            <ul class="mini-list">
+              <li><i aria-hidden="true"><svg><use href="#i-check"/></svg></i><span>Le formulaire de demande de visa national <span class="sub">Fourni par l'agence</span></span></li>
+              <li><i aria-hidden="true"><svg><use href="#i-check"/></svg></i>Une photo d'identité</li>
+              <li><i aria-hidden="true"><svg><use href="#i-check"/></svg></i>Le passeport complet</li>
+              <li><i aria-hidden="true"><svg><use href="#i-check"/></svg></i>Un extrait de casier judiciaire de moins de 3 mois</li>
+              <li><i aria-hidden="true"><svg><use href="#i-check"/></svg></i>La lettre d'admission d'un établissement d'enseignement supérieur au Luxembourg</li>
+              <li><i aria-hidden="true"><svg><use href="#i-check"/></svg></i>La preuve de ressources suffisantes pour couvrir les frais de séjour et de retour</li>
+              <li><i aria-hidden="true"><svg><use href="#i-check"/></svg></i>Une assurance voyage</li>
+              <li><i aria-hidden="true"><svg><use href="#i-check"/></svg></i>Une réservation de logement</li>
+              <li><i aria-hidden="true"><svg><use href="#i-check"/></svg></i>Une lettre de motivation</li>
+              <li><i aria-hidden="true"><svg><use href="#i-check"/></svg></i>Les copies des diplômes et relevés de notes, ainsi que l'équivalence du bac pour une Licence</li>
+            </ul>
+            <div class="fee">
+              <span class="fee-label">Frais</span>
+              <span class="fee-amount" data-money="feeVisa"></span>
+            </div>
+            <div class="after-visa">
+              <svg aria-hidden="true"><use href="#i-plane"/></svg>
+              <p><strong>Après l'obtention du visa :</strong> le candidat règle à l'agence un montant de <span class="amt" data-money="feeAfterVisa"></span> avant son départ.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Récapitulatif des frais -->
+      <div class="fees-recap reveal">
+        <h3>Récapitulatif des frais</h3>
+        <dl>
+          <div class="row promo"><dt>Étape 1 · Équivalence<small class="hide-when-ended">Offre spéciale <span data-cfg="periodText"></span></small></dt><dd><s class="hide-when-ended" data-cfg="priceOld"></s><span data-cfg="priceNew"></span></dd></div>
+          <div class="row"><dt>Étape 2 · Admission</dt><dd data-money="feeAdmission"></dd></div>
+          <div class="row"><dt>Étape 3 · Visa</dt><dd data-money="feeVisa"></dd></div>
+          <div class="row"><dt>Après l'obtention du visa<small>À régler avant le départ</small></dt><dd data-money="feeAfterVisa"></dd></div>
+        </dl>
+      </div>
+
+      <div class="refund reveal" role="note"><svg aria-hidden="true"><use href="#i-alert"/></svg><p>Tous les frais payés pendant la procédure sont non remboursables.</p></div>
+
+      <div class="parcours-cta reveal">
+        <a class="btn btn-cta js-wa" data-msg="parcours" href="#"><svg aria-hidden="true"><use href="#i-wa"/></svg>Je démarre mon projet Luxembourg</a>
+      </div>
     </div>
   </section>
 
@@ -537,6 +770,11 @@ var CONFIG = {
   priceNew: 2000000,
   currency: "GNF",
 
+  // Frais des étapes suivantes (en nombres, sans espaces)
+  feeAdmission: 3000000,    // Étape 2 : demande d'admission
+  feeVisa: 4000000,         // Étape 3 : demande de visa
+  feeAfterVisa: 10000000,   // À régler après l'obtention du visa, avant le départ
+
   // Dates de l'offre (format ISO ; "Z" = GMT+0 = heure de Conakry)
   offerStart: "2026-11-25T00:00:00Z",   // début de l'offre
   offerEnd:   "2026-12-05T23:59:59Z",   // fin de l'offre (compte à rebours)
@@ -548,7 +786,10 @@ var CONFIG = {
   endedText: "Offre terminée — contactez-nous pour connaître les conditions actuelles",
 
   // Messages du bandeau défilant
-  tickerItems: ["Offre spéciale équivalence Luxembourg", "Économisez 500 000 GNF", "Du 25 novembre au 5 décembre 2026", "Sans équivalence, pas d'admission", "Réservez sur WhatsApp"],
+  tickerItems: ["Offre spéciale équivalence Luxembourg", "Économisez 500 000 GNF", "Du 25 novembre au 5 décembre 2026", "Sans équivalence, pas d'admission", "Équivalence · Admission · Visa", "Réservez sur WhatsApp"],
+
+  // Message pré-rempli du bouton « Je démarre mon projet Luxembourg » (section parcours)
+  waParcoursMessage: "Bonjour Afrigate Travel, je souhaite être accompagné(e) pour mon projet d'études au Luxembourg (équivalence, admission et visa). Pouvez-vous me donner plus d'informations ?",
 
   // Message pré-rempli des boutons WhatsApp
   waDefaultMessage: "Bonjour Afrigate Travel, je suis intéressé(e) par l'offre de demande d'équivalence à 2 000 000 GNF. Pouvez-vous me donner plus d'informations ?",
@@ -598,7 +839,34 @@ var CONFIG = {
   // Liens
   each(".js-wa", function (a) {
     var num = a.getAttribute("data-wa") === "secondary" ? CONFIG.waSecondary : CONFIG.waPrimary;
-    external(a, waLink(num, CONFIG.waDefaultMessage));
+    var msg = a.getAttribute("data-msg") === "parcours" ? CONFIG.waParcoursMessage : CONFIG.waDefaultMessage;
+    external(a, waLink(num, msg));
+  });
+
+  // Montants des étapes 2 et 3
+  each("[data-money]", function (el) {
+    var v = CONFIG[el.getAttribute("data-money")];
+    if (typeof v === "number") el.textContent = money(v);
+  });
+
+  // Onglets Bachelor / Master
+  var tabs = document.querySelectorAll('[role="tab"]');
+  function selectTab(tab) {
+    Array.prototype.forEach.call(tabs, function (t) {
+      var on = t === tab;
+      t.setAttribute("aria-selected", on ? "true" : "false");
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+    });
+  }
+  Array.prototype.forEach.call(tabs, function (t, i) {
+    t.addEventListener("click", function () { selectTab(t); });
+    t.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+        var next = tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
+        selectTab(next); next.focus(); e.preventDefault();
+      }
+    });
   });
   each(".js-wa-quick", function (a) {
     external(a, CONFIG.waBusinessLink || waLink(CONFIG.waPrimary, CONFIG.waDefaultMessage));
