@@ -227,7 +227,10 @@
     .wa-float{bottom:24px;right:24px;width:62px;height:62px}
     section{padding:96px 0}
     .hero{padding:20px 0 96px}
-    .hero-grid{grid-template-columns:1.1fr .9fr;align-items:center;gap:48px}
+    .hero-grid{grid-template-columns:1.05fr .95fr;grid-template-areas:"text visual" "price visual";align-items:start;gap:32px 48px}
+    .hero-text{grid-area:text}
+    .hero-visual{grid-area:visual;align-self:center}
+    .hero-grid > .price-card{grid-area:price;margin-top:0}
     .price-inner{padding:30px 28px}
     .features{grid-template-columns:repeat(2,1fr)}
     .steps{grid-template-columns:repeat(2,1fr)}
@@ -262,6 +265,56 @@
     html{scroll-behavior:auto}
   }
   .is-ended .hide-when-ended{display:none!important}
+
+  /* ---------- Visuel du hero : étudiante + décor animé ---------- */
+  .hero-visual{position:relative;height:430px;margin:0 -16px -86px;z-index:1}
+  .hero-grid > .price-card{position:relative;z-index:2}
+  .hv-halo{position:absolute;left:50%;top:46%;width:300px;height:300px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 50% 42%,#1d6fd6 0%,#0b3a80 58%,#0a1b45 100%);box-shadow:0 0 0 10px rgba(255,255,255,.05),0 0 90px 20px rgba(0,161,222,.35)}
+  .hv-ring{position:absolute;left:50%;top:46%;width:340px;height:340px;margin:-170px 0 0 -170px;border-radius:50%;background:conic-gradient(#ed2939 0 33%,#fff 33% 66%,#00a1de 66% 100%);-webkit-mask:radial-gradient(circle,transparent 162px,#000 164px,#000 170px,transparent 171px);mask:radial-gradient(circle,transparent 162px,#000 164px,#000 170px,transparent 171px);animation:spin-r 28s linear infinite;opacity:.9}
+  .hv-photo{position:absolute;left:50%;bottom:86px;height:350px;width:auto;transform:translateX(-50%);filter:drop-shadow(0 24px 30px rgba(0,0,0,.55));animation:bob 6s ease-in-out infinite}
+  .hv-flight{position:absolute;left:0;top:10px;width:100%;height:300px;overflow:visible}
+  .hv-dash{animation:dash 1.2s linear infinite}
+  .hv-chip{position:absolute;z-index:2;display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.96);color:#0b1226;border-radius:14px;padding:8px 12px;font-family:Sora,sans-serif;font-weight:800;font-size:.8rem;line-height:1.15;box-shadow:0 14px 30px -10px rgba(0,0,0,.6);animation:bob 5s ease-in-out infinite}
+  .hv-chip small{display:block;font-family:Inter,sans-serif;font-weight:600;font-size:.68rem;color:#4f5b70}
+  .hv-c1{right:16px;top:28px}
+  .hv-c2{left:16px;top:200px;animation-delay:-1.6s}
+  .hv-c3{right:12px;top:250px;animation-delay:-3.2s}
+  .mini-flag{width:30px;height:20px;border-radius:4px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+  .mini-flag b{flex:1}.fr{background:#ed2939}.fw{background:#fff}.fb{background:#00a1de}
+  .hv-ic{width:30px;height:30px;border-radius:9px;background:var(--grad);display:grid;place-items:center;color:#fff}
+  .hv-ic.ok{background:linear-gradient(135deg,#3be27a,#0f9d4f)}
+  .hv-ic svg{width:17px;height:17px}
+  .spark{position:absolute;width:14px;height:14px;background:#fff;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);animation:twinkle 2.6s ease-in-out infinite}
+  .spark.s1{left:22%;top:40px}.spark.s2{right:28%;top:150px;width:10px;height:10px;animation-delay:-.9s}.spark.s3{left:12%;top:300px;width:9px;height:9px;animation-delay:-1.7s}
+  @media (min-width:768px){
+    .hero-visual{height:600px;margin:0}
+    .hv-halo{width:420px;height:420px}
+    .hv-ring{width:470px;height:470px;margin:-235px 0 0 -235px;-webkit-mask:radial-gradient(circle,transparent 226px,#000 228px,#000 235px,transparent 236px);mask:radial-gradient(circle,transparent 226px,#000 228px,#000 235px,transparent 236px)}
+    .hv-photo{bottom:0;height:560px}
+    .hv-chip{font-size:.92rem;padding:10px 14px}
+    .hv-chip small{font-size:.75rem}
+    .hv-c1{right:0;top:40px}.hv-c2{left:0;top:330px}.hv-c3{right:0;top:420px}
+  }
+
+  /* ---------- Mouvement général ---------- */
+  .grad-text{background-size:200% auto;animation:gradmove 6s ease-in-out infinite}
+  .btn-cta.nudge{animation:nudge 4.5s ease-in-out infinite}
+  .roadmap::before{background-size:200% 100%;animation:gradmove 4s linear infinite}
+  .checklist li.reveal:nth-child(2),.steps li.reveal:nth-child(2),.features .reveal:nth-child(2){transition-delay:.08s}
+  .checklist li.reveal:nth-child(3),.steps li.reveal:nth-child(3),.features .reveal:nth-child(3){transition-delay:.16s}
+  .checklist li.reveal:nth-child(4),.steps li.reveal:nth-child(4),.features .reveal:nth-child(4){transition-delay:.24s}
+  .checklist li.reveal:nth-child(5){transition-delay:.32s}
+  .reveal.from-left{transform:translateX(-30px)}
+  .reveal.from-right{transform:translateX(30px)}
+  .reveal.zoom{transform:scale(.92)}
+  .reveal.visible.from-left,.reveal.visible.from-right,.reveal.visible.zoom{transform:none}
+  @keyframes spin-r{to{transform:rotate(360deg)}}
+  @keyframes bob{0%,100%{translate:0 0}50%{translate:0 -10px}}
+  @keyframes dash{to{stroke-dashoffset:-34}}
+  @keyframes twinkle{0%,100%{opacity:.2;transform:scale(.6)}50%{opacity:1;transform:scale(1)}}
+  @keyframes gradmove{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+  @keyframes nudge{0%,86%,100%{transform:none}89%{transform:translateX(-4px) rotate(-1deg)}92%{transform:translateX(4px) rotate(1deg)}95%{transform:translateX(-2px)}}
+  @media (prefers-reduced-motion:reduce){.hv-flight g{display:none}}
 
   /* ---------- Parcours complet (3 étapes) ---------- */
   .hero-link{display:inline-flex;align-items:center;gap:8px;margin-top:20px;min-height:44px;color:#fff;font-weight:700;text-decoration:none;border-bottom:2px solid rgba(255,176,32,.6);padding-bottom:2px}
@@ -383,7 +436,7 @@
     </div>
 
     <div class="hero-grid">
-      <div class="reveal">
+      <div class="hero-text reveal">
         <span class="chip hide-when-ended"><span class="live"></span>Offre limitée · places à saisir</span>
         <h1>Demande d'équivalence pour le Luxembourg : <span class="grad-text">l'offre spéciale est là&nbsp;!</span></h1>
         <p class="lead">Afrigate Travel s'occupe de votre demande d'équivalence du diplôme de A à Z, pour que votre projet d'études avance sans blocage.</p>
@@ -393,6 +446,22 @@
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>Suivi personnalisé sur WhatsApp</li>
         </ul>
         <a class="hero-link" href="#parcours">Équivalence, admission, visa : voir le parcours complet →</a>
+      </div>
+
+      <!-- Visuel : étudiante + décor animé (image : assets/etudiante.webp) -->
+      <div class="hero-visual reveal zoom" aria-hidden="true">
+        <div class="hv-ring"></div>
+        <div class="hv-halo"></div>
+        <svg class="hv-flight" viewBox="0 0 400 300" preserveAspectRatio="none">
+          <path id="flightPath" d="M10 260 C 120 200, 200 60, 390 30" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="2.5" stroke-dasharray="8 9" stroke-linecap="round" class="hv-dash"/>
+          <g fill="#fff"><path d="M12 0 L-8 -7 L-4 0 L-8 7Z"/><path fill="#ffb020" d="M-4 0 L-11 -4 L-11 4Z"/>
+            <animateMotion dur="6s" repeatCount="indefinite" rotate="auto"><mpath href="#flightPath"/></animateMotion></g>
+        </svg>
+        <img class="hv-photo" src="assets/etudiante.webp" width="600" height="876" alt="" decoding="async" fetchpriority="high">
+        <div class="hv-chip hv-c1"><span class="mini-flag"><b class="fr"></b><b class="fw"></b><b class="fb"></b></span><span>Luxembourg<small>Destination études</small></span></div>
+        <div class="hv-chip hv-c2"><span class="hv-ic"><svg><use href="#i-cap"/></svg></span><span>Bachelor · Master<small>Admission accompagnée</small></span></div>
+        <div class="hv-chip hv-c3"><span class="hv-ic ok"><svg><use href="#i-check"/></svg></span><span>Visa d'études<small>On vous guide</small></span></div>
+        <i class="spark s1"></i><i class="spark s2"></i><i class="spark s3"></i>
       </div>
 
       <div class="price-card reveal">
@@ -410,7 +479,7 @@
             <div class="cd-box"><span class="cd-num" data-unit="m">00</span><span class="cd-lbl">Min</span></div>
             <div class="cd-box"><span class="cd-num" data-unit="s">00</span><span class="cd-lbl">Sec</span></div>
           </div>
-          <a class="btn btn-cta btn-block js-wa" href="#"><svg aria-hidden="true"><use href="#i-wa"/></svg>Je réserve ma place sur WhatsApp</a>
+          <a class="btn btn-cta btn-block js-wa nudge" href="#"><svg aria-hidden="true"><use href="#i-wa"/></svg>Je réserve ma place sur WhatsApp</a>
         </div>
       </div>
     </div>
@@ -426,7 +495,7 @@
   <!-- ======================= 2. ALERTE ======================= -->
   <section class="alert-section" aria-labelledby="alerteTitre">
     <div class="wrap">
-      <div class="alert-box reveal" role="note">
+      <div class="alert-box reveal zoom" role="note">
         <div class="alert-head">
           <div class="alert-icon" aria-hidden="true"><svg><use href="#i-alert"/></svg></div>
           <h2 id="alerteTitre">Attention : l'équivalence est indispensable</h2>
@@ -641,7 +710,7 @@
   <!-- ======================= Communauté WhatsApp ======================= -->
   <section style="padding-top:0" aria-labelledby="commuTitre">
     <div class="wrap">
-      <div class="community reveal">
+      <div class="community reveal zoom">
         <div class="c-icon" aria-hidden="true"><svg><use href="#i-users"/></svg></div>
         <h2 id="commuTitre">Rejoignez la communauté Afrigate Travel</h2>
         <p>Recevez nos offres, nos conseils et les informations utiles pour vos études à l'étranger, directement sur WhatsApp.</p>
@@ -666,7 +735,7 @@
       </div>
 
       <div class="contact-grid">
-        <div class="glass recap reveal">
+        <div class="glass recap reveal from-left">
           <div class="badge hide-when-ended">🔥 Économisez <span data-cfg="savings"></span></div>
           <div class="price-old-line"><span class="price-old" data-cfg="priceOld"></span></div>
           <span class="price-new js-price-new"></span>
@@ -685,7 +754,7 @@
           <a class="mail-link js-mail" href="#"><svg aria-hidden="true"><use href="#i-mail"/></svg><span data-cfg="email"></span></a>
         </div>
 
-        <form class="glass form-card reveal" id="contactForm" novalidate>
+        <form class="glass form-card reveal from-right" id="contactForm" novalidate>
           <h3>Envoyez-nous vos informations</h3>
           <p>Le formulaire ouvre WhatsApp avec votre message déjà rempli. Il ne vous reste qu'à appuyer sur « Envoyer ».</p>
           <div class="field">
@@ -731,7 +800,7 @@
 <!-- ======================= Éléments fixes ======================= -->
 <a class="wa-float js-wa-quick" href="#" aria-label="Discuter avec Afrigate Travel sur WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
 <div class="sticky-bar">
-  <a class="btn btn-cta js-wa" href="#"><svg aria-hidden="true"><use href="#i-wa"/></svg><span class="js-sticky-label"></span></a>
+  <a class="btn btn-cta js-wa nudge" href="#"><svg aria-hidden="true"><use href="#i-wa"/></svg><span class="js-sticky-label"></span></a>
 </div>
 
 <script>
